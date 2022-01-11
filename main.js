@@ -1,27 +1,25 @@
-let fruit = [
-    "Berries",
-    "Apple",
-    "Watermelon",
-    "Orange",
-    "Guava",
-    "Banana",
-    "Coconut",
-    "Mango",
-    "Lemon",
-    "Cherry ",
+let CPU = [
+    "AMD",
+    "Intel",
+    "Nvidia",
+    "Qualcomm",
+    "Mediatek",
+    "Bionic",
+    "Acer inc.",
+
 ];
 
-function readFruit(fruit){
-   document.querySelector("#fruit").innerHTML = "";
+function readCPU(CPU){
+   document.querySelector("#CPU").innerHTML = "";
 
-   fruit.forEach((fruit,position) => {
-   document.querySelector("#fruit").innerHTML +=`
+   CPU.forEach((CPU,position) => {
+   document.querySelector("#CPU").innerHTML +=`
     <li>
-    ${fruit} 
+    ${CPU} 
     <div class="content">
     <div  class="buttons">
-    <button  class="btn btn-outline-success" onclick="updateFruit(${position})">UPDATE</button>
-    <button  class="btn btn-outline-danger" onclick="deleteFruit(${position})">DELETE</button>
+    <button  class="btn btn-outline-success" onclick="updateCPU(${position})">UPDATE</button>
+    <button  class="btn btn-outline-danger" onclick="deleteCPU(${position})">DELETE</button>
     </div>
     </div>
    
@@ -31,34 +29,34 @@ function readFruit(fruit){
    });
 }
 
-readFruit(fruit);
+readCPU(CPU);
 
-function createFruit(){
-    let newfruit = document.querySelector("#add").value;
+function createCPU(){
+    let newCPU = document.querySelector("#add").value;
     try{
-        if(newfruit =="") throw "Please enter a fruit name..."
-        fruit.forEach(individual =>{
-            if(individual == newfruit)throw "That fruit name already exists..."
+        if(newCPU =="") throw "Please enter a CPU name..."
+        CPU.forEach(individual =>{
+            if(individual == newCPU)throw "That CPU name already exists..."
         })
-        console.log(fruit);
+        console.log(CPU);
 
 
-        fruit.push(newfruit);
-        readFruit(fruit);
+        CPU.push(newCPU);
+        readCPU(CPU);
     } catch(err){
         alert(err)
     }
 
 }
 
-function deleteFruit(position){
-    fruit.splice(position, 1)
-    readFruit(fruit);
+function deleteCPU(position){
+    CPU.splice(position, 1)
+    readCPU(CPU);
 }
 
-function updateFruit(position){
-    let fruits = prompt("Update me...");
-    console.log(fruits);
-    fruit[position]= fruits;
-    readFruit(fruit);
+function updateCPU(position){
+    let CPUs = prompt("Update me...");
+    console.log(CPUs);
+    CPU[position]= CPUs;
+    readCPU(CPU);
 }

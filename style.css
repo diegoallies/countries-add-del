@@ -1,4 +1,4 @@
-#fruit{
+#CPU{
     list-style: none;
 }
 
@@ -15,7 +15,7 @@
 
 }
 
-#fruit{
+#CPU{
     display: grid;
     justify-content: center;
 
